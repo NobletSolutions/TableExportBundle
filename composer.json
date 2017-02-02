@@ -3,6 +3,7 @@
     "description": "Simple method to take an html table and export to CSV/XLS",
     "keywords": ["template"],
     "homepage": "https://github.com/NobletSolutions/TableExportBundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nathanael David Noblet",

@@ -1,26 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gnat
- * Date: 13/04/16
- * Time: 4:59 PM
- */
 
 namespace NS\TableExportBundle;
 
 use \PHPExcel_Reader_Exception;
 use \DOMDocument;
 use \PHPExcel;
+use \PHPExcel_Reader_HTML;
 
-class HTMLReader extends \PHPExcel_Reader_HTML
+class HTMLReader extends PHPExcel_Reader_HTML
 {
     public function loadFromString($xmlString, PHPExcel $objPHPExcel)
     {
-        while ($objPHPExcel->getSheetCount() <= $this->_sheetIndex) {
+        while ($objPHPExcel->getSheetCount() <= $this->sheetIndex) {
             $objPHPExcel->createSheet();
         }
 
-        $objPHPExcel->setActiveSheetIndex($this->_sheetIndex);
+        $objPHPExcel->setActiveSheetIndex($this->sheetIndex);
 
         $dom = new DOMDocument();
 
@@ -34,7 +29,7 @@ class HTMLReader extends \PHPExcel_Reader_HTML
         $row = 0;
         $column = 'A';
         $content = '';
-        $this->_processDomElement($dom, $objPHPExcel->getActiveSheet(), $row, $column, $content);
+        $this->processDomElement($dom, $objPHPExcel->getActiveSheet(), $row, $column, $content);
 
         return $objPHPExcel;
     }

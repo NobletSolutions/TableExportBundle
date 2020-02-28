@@ -23,10 +23,10 @@ class Exporter
     {
         $html = $this->twig->render($sheet->getTemplate(), $sheet->getParameters());
         $headers = [
-            'Content-type' => 'text/vnd.ms-excel; charset=utf-8',
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             'Pragma' => 'public',
             'Cache-Control' => 'maxage=1',
-            'Content-Disposition' => sprintf('attachment;filename=%s-%s.xls', $baseFileName, date('Y_m_d_H_i_s')),
+            'Content-Disposition' => sprintf('attachment;filename=%s-%s.xlsx', $baseFileName, date('Y_m_d_H_i_s')),
         ];
 
         return new StreamedResponse(static function () use ($html, $sheet) {
@@ -74,10 +74,10 @@ class Exporter
         $spreadsheet->setActiveSheetIndex(0);
 
         $headers = array_merge([
-            'Content-type' => 'text/vnd.ms-excel; charset=utf-8',
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             'Pragma' => 'public',
             'Cache-Control' => 'maxage=1',
-            'Content-Disposition' => sprintf('attachment;filename=%s-%s.xls', $baseFileName, date('Y_m_d_H_i_s')),
+            'Content-Disposition' => sprintf('attachment;filename=%s-%s.xlsx', $baseFileName, date('Y_m_d_H_i_s')),
         ], $headers);
 
         return new StreamedResponse(static function () use ($spreadsheet) {

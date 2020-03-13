@@ -12,13 +12,13 @@ class Sheet
     /** @var string */
     private $template;
 
-    /** @var array|null */
+    /** @var array */
     private $parameters;
 
     public function __construct(string $template, ?array $parameters = null)
     {
         $this->template = $template;
-        $this->parameters = $parameters;
+        $this->parameters = $parameters ?? [];
     }
 
     public function setTitle(?string $title): void
@@ -55,7 +55,7 @@ class Sheet
         return $this->template;
     }
 
-    public function getParameters(): ?array
+    public function getParameters(): array
     {
         return $this->parameters;
     }

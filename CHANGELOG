@@ -3,6 +3,7 @@ VERSION 1  INITIAL RELEASE ON NEW PHP/SPREADSHEET
 =================================================
 
    Version 1.0 - Initial release on new php/spreadsheet
+      09/03/2024 16:55  1.0.4  Allow SF6
       05/06/2021 10:41  1.0.3  Fixed SF 5.3 support
       13/03/2020 15:41  1.0.2  Fixed twig usage problem
       28/02/2020 09:54  1.0.1  Updated output formats

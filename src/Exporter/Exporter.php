@@ -11,8 +11,7 @@ use Twig\Environment;
 
 class Exporter
 {
-    /** @var Environment */
-    private $twig;
+    private Environment $twig;
 
     public function __construct(Environment $twig)
     {

@@ -6,18 +6,15 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class Sheet
 {
-    /** @var string|null */
-    private $title;
+    private string|null $title;
 
-    /** @var string */
-    private $template;
+    private string $template;
 
-    /** @var array */
-    private $parameters;
+    private array $parameters;
 
     public function __construct(string $template, ?array $parameters = null)
     {
-        $this->template = $template;
+        $this->template   = $template;
         $this->parameters = $parameters ?? [];
     }
 
@@ -31,8 +28,7 @@ class Sheet
         return $this->title;
     }
 
-    /** @var string|null */
-    private $safeTitle;
+    private ?string $safeTitle = null;
 
     public function getSafeTitle(): ?string
     {
@@ -44,7 +40,7 @@ class Sheet
             return $this->safeTitle;
         }
 
-        $name = str_replace(Worksheet::getInvalidCharacters(), ' ', $this->title);
+        $name            = str_replace(Worksheet::getInvalidCharacters(), ' ', $this->title);
         $this->safeTitle = strlen($name) >= 31 ? substr($name, 0, 25) . '...' : $this->title;
 
         return $this->safeTitle;

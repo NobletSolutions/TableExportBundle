@@ -2,6 +2,9 @@
 VERSION 1  INITIAL RELEASE ON NEW PHP/SPREADSHEET
 =================================================
 
+   Version 1.1 - Support SF7, Bump min php version
+      27/10/2025 09:35  1.1.0  initial release
+
    Version 1.0 - Initial release on new php/spreadsheet
       01/05/2024 14:05  1.0.5  Specified required php versions
       09/03/2024 16:55  1.0.4  Allow SF6

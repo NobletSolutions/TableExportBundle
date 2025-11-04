@@ -3,6 +3,7 @@ VERSION 1  INITIAL RELEASE ON NEW PHP/SPREADSHEET
 =================================================
 
    Version 1.1 - Support SF7, Bump min php version
+      03/11/2025 22:24  1.1.1  Fix nullable field issue on newer PHP versions
       27/10/2025 09:35  1.1.0  initial release
 
    Version 1.0 - Initial release on new php/spreadsheet

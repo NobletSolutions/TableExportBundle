@@ -6,7 +6,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class Sheet
 {
-    private string|null $title;
+    private ?string $title = null;
 
     private string $template;
 
